@@ -13,7 +13,7 @@
 
 ## PDF
 - This document details from the creation of the user, creation of the database, creation of the tables and the insertion of data in the tables.
-- <a href="https://drive.google.com/file/d/1q1CHOMuQIFOR-AOY30Oy0cz_AjGQOTCx/view?usp=sharing">PDF</a>   
+- <a href="https://drive.google.com/file/d/1q1CHOMuQIFOR-AOY30Oy0cz_AjGQOTCx/view?usp=sharing" target="blank_">PDF</a>   
 
 ### Total BackUp
 - <a href="./disnovo_files/back_up_dump.sql">Schema and data backup</a> 
