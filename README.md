@@ -13,7 +13,7 @@
 
 ## PDF
 - This document details from the creation of the user, creation of the database, creation of the tables and the insertion of data in the tables.
-- <a href="./disnovo_files/DisnovoTest-KenyiHancco.pdf">PDF</a>   
+- <a href="https://drive.google.com/file/d/1q1CHOMuQIFOR-AOY30Oy0cz_AjGQOTCx/view?usp=sharing">PDF</a>   
 
 ### Total BackUp
 - <a href="./disnovo_files/back_up_dump.sql">Schema and data backup</a> 
@@ -27,5 +27,5 @@
 ### Queries
 - <a href="./disnovo_files/statements.sql">Queries</a> 
 
-## 1. Schema
-<img src = "./db_disnovo.png" alt = "Logo">
+## Schema
+<img src = "./disnovo_files/db_disnovo.png" alt = "Logo">
