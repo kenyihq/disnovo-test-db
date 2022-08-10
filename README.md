@@ -1,12 +1,12 @@
 # Disnovo
 
-## Database Test (PL/psql)
+## Database Test (PL/sql)
 - In the test it was created, and I generated the queries raised. 2 queries were not possible because they were not clear and because of the difficulty.
 
 ### Use:
 - Basic queries
 - Views
-- Stored procedures (pl/psql)
+- Stored procedures (pl/sql)
 - BackUp (version control)
 
 ## Link directs to its respective file.
