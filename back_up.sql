@@ -88,9 +88,9 @@ CREATE TABLE transaction(
 CREATE TABLE transaction_detail(
     transaction_dateil_id SERIAL PRIMARY KEY,
     nickname_owner_transaction VARCHAR(64) UNIQUE,
-    id_product INT NOT NULL,
+    product_id INT NOT NULL,
     nickname_owner_product VARCHAR(64) UNIQUE,
-    id_item SMALLINT UNIQUE,
+    item_id SMALLINT UNIQUE,
     price NUMERIC NOT NULL,
     quantity NUMERIC NOT NULL,
     transactiondetail_discount NUMERIC NOT NULL,
@@ -119,3 +119,20 @@ CREATE TABLE product_type(
 	erased BOOLEAN NOT NULL
 );
 
+-- Added Foreign keys
+
+ALTER TABLE products ADD CONSTRAINT fk_pti
+    FOREIGN KEY (product_type_id)
+    REFERENCES product_type(product_type_id);
+
+ALTER TABLE transaction ADD CONSTRAINT fk_tti
+    FOREIGN KEY (transaction_type_id)
+    REFERENCES transaction_type(transaction_type_id);
+
+ALTER TABLE transaction ADD CONSTRAINT fk_ci
+    FOREIGN KEY (contact_id)
+    REFERENCES contacts(contact_id);
+
+ALTER TABLE transaction_detail ADD CONSTRAINT fk_pi
+    FOREIGN KEY (product_id)
+    REFERENCES products(product_id);
