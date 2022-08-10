@@ -3,6 +3,8 @@
 ## Database Test (PL/sql)
 - In the test it was created, and I generated the queries raised. 2 queries were not possible because they were not clear and because of the difficulty.
 
+### <a href="https://drive.google.com/file/d/1lthpZr0pfXcojMFoUF4-2jVUcfcOe1DE/view?usp=sharing">Video presentation</a>
+
 ### Use:
 - Basic queries
 - Views
