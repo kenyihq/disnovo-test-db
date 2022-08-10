@@ -1,6 +1,7 @@
 -- Create database
-CREATE DATABASE IF NOT EXISTS db_disnovo OWBER disnovo;
+CREATE DATABASE db_disnovo OWNER disnovo;
 
+DROP DATABASE db_disnovo;
 -- Create tables
 CREATE TABLE contacts(
     contact_id SERIAL PRIMARY KEY,
