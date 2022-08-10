@@ -205,9 +205,9 @@ ALTER TABLE public.transaction OWNER TO disnovo;
 CREATE TABLE public.transaction_detail (
     transaction_dateil_id integer NOT NULL,
     nickname_owner_transaction character varying(64),
-    id_product integer NOT NULL,
+    product_id integer NOT NULL,
     nickname_owner_product character varying(64),
-    id_item smallint,
+    item_id smallint,
     price numeric NOT NULL,
     quantity numeric NOT NULL,
     transactiondetail_discount numeric NOT NULL,
@@ -389,7 +389,7 @@ COPY public.transaction (transaction_id, nickname_owner, transaction_name, trans
 -- Data for Name: transaction_detail; Type: TABLE DATA; Schema: public; Owner: disnovo
 --
 
-COPY public.transaction_detail (transaction_dateil_id, nickname_owner_transaction, id_product, nickname_owner_product, id_item, price, quantity, transactiondetail_discount, transactiondetail_discountpercentage, transactiondetail_charge, transactiondetail_chargepercentage, transactiondetail_taxpercentage, transactiondetail_tax, transactiondetail_balance, description, commentary, state, erased) FROM stdin;
+COPY public.transaction_detail (transaction_dateil_id, nickname_owner_transaction, product_id, nickname_owner_product, item_id, price, quantity, transactiondetail_discount, transactiondetail_discountpercentage, transactiondetail_charge, transactiondetail_chargepercentage, transactiondetail_taxpercentage, transactiondetail_tax, transactiondetail_balance, description, commentary, state, erased) FROM stdin;
 \.
 
 
@@ -500,11 +500,11 @@ ALTER TABLE ONLY public.products
 
 
 --
--- Name: transaction_detail transaction_detail_id_item_key; Type: CONSTRAINT; Schema: public; Owner: disnovo
+-- Name: transaction_detail transaction_detail_item_id_key; Type: CONSTRAINT; Schema: public; Owner: disnovo
 --
 
 ALTER TABLE ONLY public.transaction_detail
-    ADD CONSTRAINT transaction_detail_id_item_key UNIQUE (id_item);
+    ADD CONSTRAINT transaction_detail_item_id_key UNIQUE (item_id);
 
 
 --
@@ -577,6 +577,38 @@ ALTER TABLE ONLY public.transaction_type
 
 ALTER TABLE ONLY public.transaction_type
     ADD CONSTRAINT transaction_type_pkey PRIMARY KEY (transaction_type_id);
+
+
+--
+-- Name: transaction fk_ci; Type: FK CONSTRAINT; Schema: public; Owner: disnovo
+--
+
+ALTER TABLE ONLY public.transaction
+    ADD CONSTRAINT fk_ci FOREIGN KEY (contact_id) REFERENCES public.contacts(contact_id);
+
+
+--
+-- Name: transaction_detail fk_pi; Type: FK CONSTRAINT; Schema: public; Owner: disnovo
+--
+
+ALTER TABLE ONLY public.transaction_detail
+    ADD CONSTRAINT fk_pi FOREIGN KEY (product_id) REFERENCES public.products(product_id);
+
+
+--
+-- Name: products fk_pti; Type: FK CONSTRAINT; Schema: public; Owner: disnovo
+--
+
+ALTER TABLE ONLY public.products
+    ADD CONSTRAINT fk_pti FOREIGN KEY (product_type_id) REFERENCES public.product_type(product_type_id);
+
+
+--
+-- Name: transaction fk_tti; Type: FK CONSTRAINT; Schema: public; Owner: disnovo
+--
+
+ALTER TABLE ONLY public.transaction
+    ADD CONSTRAINT fk_tti FOREIGN KEY (transaction_type_id) REFERENCES public.transaction_type(transaction_type_id);
 
 
 --
